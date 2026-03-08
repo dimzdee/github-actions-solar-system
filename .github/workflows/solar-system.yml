@@ -48,10 +48,10 @@ jobs:
           node-version: 18
           
       - name: Install Dependencies
+        continue-on-error: true
         run: npm install
         
       - name: Run Code-coverage
-        continue-on-error: true
         run: npm run coverge
         
       - name: Upload code-coverage
@@ -60,6 +60,7 @@ jobs:
           name: Code-Coverage-Result
           path: coverage
           retention-days: 5
+
 
 
 
