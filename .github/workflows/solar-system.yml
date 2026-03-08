@@ -49,9 +49,9 @@ jobs:
           
       - name: Install Dependencies
         run: npm install
+        continue-on-error: true
         
       - name: Run Code-coverage
-        continue-on-error: true
         run: npm run code-coverge
         
       - name: Upload code-coverage
@@ -60,6 +60,7 @@ jobs:
           name: Code-Coverage-Result
           path: coverage
           retention-days: 5
+
 
 
 
