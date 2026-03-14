@@ -50,7 +50,7 @@ jobs:
       - name: Setup NodeJS Version
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 20
           
       - name: Install Dependencies
         continue-on-error: true
@@ -68,6 +68,8 @@ jobs:
           retention-days: 5
 
     docker:
+      permissions:
+        packages: write
       runs-on: ubuntu-latest
       needs:
         - unit-testing
